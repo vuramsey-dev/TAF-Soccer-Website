@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Khuyến mãi Xả Kho - TAF Soccer</title>
+    <link rel="stylesheet" href="/Frontend/CSS/homepage.css" />
+    <link rel="stylesheet" href="/Frontend/CSS/category.css" />
+  </head>
+  <body class="all-products-page">
+    <header class="header">
+      <div class="top-header">
+        <a href="/Frontend/user/homepage.html" class="logo-box">
+          <img
+            src="/Frontend/img/logo.jpg"
+            alt="Logo Tùng Anh Family Soccer"
+            class="logo"
+          />
+          <div>
+            <h1>TAF Soccer</h1>
+          </div>
+        </a>
+
+        <div class="search-box">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Tìm kiếm giày bóng đá đang sale..."
+          />
+          <button
+            onclick="window.location.href = '/Frontend/user/all-products.html'"
+          >
+            Tìm tất cả
+          </button>
+        </div>
+
+        <div class="account-box">
+          <a href="/Frontend/user/cart.html" class="cart">🛒 Giỏ hàng</a>
+
+          <div class="user-menu">
+            <button class="user-icon">👤</button>
+
+            <div class="user-dropdown" id="userDropdown"></div>
+          </div>
+        </div>
+      </div>
+
+      <nav class="navbar">
+        <ul>
+          <li class="dropdown">
+            <a href="/Frontend/user/homepage.html">Trang chủ</a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="/Frontend/user/homepage.html#gioithieu"
+                  >Giới thiệu website</a
+                >
+              </li>
+              <li>
+                <a href="/Frontend/user/homepage.html#sanpham"
+                  >Sản phẩm nổi bật</a
+                >
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="/Frontend/user/all-products.html">Tất cả sản phẩm</a>
+          </li>
+
+          <li class="dropdown">
+            <a href="#">Thương hiệu</a>
+            <ul class="dropdown-menu">
+              <li><a href="/Frontend/user/nike.html">Nike</a></li>
+              <li><a href="/Frontend/user/adidas.html">Adidas</a></li>
+              <li><a href="/Frontend/user/mizuno.html">Mizuno</a></li>
+              <li><a href="/Frontend/user/puma.html">Puma</a></li>
+            </ul>
+          </li>
+
+          <li class="dropdown">
+            <a href="#">Hướng dẫn</a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="/Frontend/user/size.html">Hướng dẫn chọn size</a>
+              </li>
+              <li>
+                <a href="/Frontend/user/thuonghieu.html"
+                  >Hướng dẫn chọn thương hiệu</a
+                >
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="/Frontend/user/sale.html" style="color: #ffcc00"
+              >Khuyến mãi</a
+            >
+          </li>
+          <li><a href="#lienhe">Liên hệ</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section
+      class="all-products-hero"
+      style="background: linear-gradient(90deg, #111111, #9b000c)"
+    >
+      <div class="all-products-hero-content">
+        <span
+          style="
+            background: #ffcc00;
+            color: #111;
+            border: none;
+            font-weight: bold;
+            padding: 5px 12px;
+            border-radius: 4px;
+          "
+          >🔥 HÀNG CLEARANCE 🔥</span
+        >
+        <h1 style="font-size: 60px; color: #fff; margin-top: 15px">
+          XẢ KHO GIÁ SỐC
+        </h1>
+        <p
+          style="
+            color: #eee;
+            font-size: 18px;
+            max-width: 600px;
+            line-height: 1.6;
+          "
+        >
+          Cơ hội sở hữu những đôi giày bóng đá chính hãng với mức giá chạm đáy.
+          Giảm giá đồng loạt 30% cho các mã sản phẩm dưới đây. Số lượng cực kỳ
+          có hạn!
+        </p>
+      </div>
+    </section>
+
+    <main class="catalog-page-shell">
+      <aside class="catalog-filter-panel" aria-label="Bộ lọc sản phẩm">
+        <div class="catalog-filter-heading">
+          <div>
+            <span>Bộ lọc</span>
+            <h2>Chọn nhanh</h2>
+          </div>
+
+          <button
+            type="button"
+            class="clear-catalog-filter"
+            onclick="resetAllProductFilters()"
+          >
+            Xóa lọc
+          </button>
+        </div>
+
+        <div class="catalog-filter-group">
+          <h3>Thương hiệu</h3>
+          <div class="catalog-check-grid">
+            <label
+              ><input
+                type="checkbox"
+                class="brand-checkbox"
+                value="Nike"
+              />Nike</label
+            >
+            <label
+              ><input
+                type="checkbox"
+                class="brand-checkbox"
+                value="Adidas"
+              />Adidas</label
+            >
+            <label
+              ><input
+                type="checkbox"
+                class="brand-checkbox"
+                value="Mizuno"
+              />Mizuno</label
+            >
+            <label
+              ><input
+                type="checkbox"
+                class="brand-checkbox"
+                value="Puma"
+              />Puma</label
+            >
+          </div>
+        </div>
+
+        <div class="catalog-filter-group">
+          <h3>Kích thước</h3>
+          <div class="catalog-check-grid catalog-size-grid">
+            <label
+              ><input
+                type="checkbox"
+                class="size-checkbox"
+                value="38"
+              />38</label
+            >
+            <label
+              ><input
+                type="checkbox"
+                class="size-checkbox"
+                value="39"
+              />39</label
+            >
+            <label
+              ><input
+                type="checkbox"
+                class="size-checkbox"
+                value="40"
+              />40</label
+            >
+            <label
+              ><input
+                type="checkbox"
+                class="size-checkbox"
+                value="41"
+              />41</label
+            >
+            <label
+              ><input
+                type="checkbox"
+                class="size-checkbox"
+                value="42"
+              />42</label
+            >
+            <label
+              ><input
+                type="checkbox"
+                class="size-checkbox"
+                value="43"
+              />43</label
+            >
+            <label
+              ><input
+                type="checkbox"
+                class="size-checkbox"
+                value="44"
+              />44</label
+            >
+            <label
+              ><input
+                type="checkbox"
+                class="size-checkbox"
+                value="45"
+              />45</label
+            >
+          </div>
+        </div>
+
+        <div class="catalog-filter-group">
+          <h3>Sắp xếp giá</h3>
+          <select id="sortProducts" aria-label="Sắp xếp sản phẩm theo giá">
+            <option value="default">Mặc định</option>
+            <option value="price-desc">Giá cao đến thấp</option>
+            <option value="price-asc">Giá thấp đến cao</option>
+          </select>
+        </div>
+
+        <label class="catalog-stock-filter">
+          <input type="checkbox" id="availableOnly" />
+          <span>Chỉ hiện sản phẩm còn hàng</span>
+        </label>
+      </aside>
+
+      <section class="catalog-results-panel">
+        <div class="catalog-results-header">
+          <div>
+            <span
+              style="
+                color: #e60012;
+                font-weight: bold;
+                text-transform: uppercase;
+              "
+              >Sale Độc Quyền</span
+            >
+            <h2>Sản Phẩm Đang Ưu Đãi</h2>
+            <p style="color: #666">
+              Mức giá hiển thị đã được trừ trực tiếp 30% vào giá gốc.
+            </p>
+          </div>
+
+          <div class="catalog-result-meta">
+            <strong id="saleProductCount">0</strong>
+            <span>sản phẩm phù hợp</span>
+          </div>
+        </div>
+
+        <div class="product-container" id="saleProductsGrid"></div>
+
+        <p
+          class="no-products"
+          id="noSaleProducts"
+          style="
+            display: none;
+            text-align: center;
+            padding: 40px;
+            font-weight: bold;
+            color: #666;
+          "
+        >
+          Không tìm thấy sản phẩm khuyến mãi phù hợp với bộ lọc.
+        </p>
+      </section>
+    </main>
+
+    <footer id="lienhe" class="footer">
+      <div class="footer-container">
+        <div class="footer-box">
+          <h3>Tùng Anh Family Soccer</h3>
+          <p>
+            Chuyên cung cấp giày bóng đá chính hãng Nike, Adidas, Mizuno,
+            Puma...
+          </p>
+          <p>Cam kết hàng chính hãng 100%, giá tốt và hỗ trợ tận tâm.</p>
+        </div>
+
+        <div class="footer-box">
+          <h3>ĐỊA CHỈ</h3>
+          <p>📍 Xã Quốc Oai, TP Hà Nội</p>
+          <p>📞 0972283405</p>
+          <p>✉️ TAFsoccer@gmail.com</p>
+          <p>🕒 08:00 - 22:00</p>
+        </div>
+
+        <div class="footer-box">
+          <h3>Hình thức thanh toán</h3>
+          <p>Thanh toán khi nhận hàng</p>
+          <p>Chuyển khoản ngân hàng</p>
+          <p>Thanh toán qua ví điện tử</p>
+        </div>
+
+        <div class="footer-box">
+          <h3>Fanpage</h3>
+          <div class="social-links">
+            <a
+              href="https://www.facebook.com/"
+              target="_blank"
+              rel="noopener"
+              class="social-link facebook"
+              aria-label="Facebook Tùng Anh Family Soccer"
+            >
+              <span class="social-icon">f</span>
+              <span>Tùng Anh Family Soccer</span>
+            </a>
+            <a
+              href="https://www.tiktok.com/"
+              target="_blank"
+              rel="noopener"
+              class="social-link tiktok"
+              aria-label="TikTok TungAnhSoccer"
+            >
+              <span class="social-icon">♪</span>
+              <span>TungAnhSoccer</span>
+            </a>
+            <a
+              href="https://www.instagram.com/"
+              target="_blank"
+              rel="noopener"
+              class="social-link instagram"
+              aria-label="Instagram tunganhfamilysoccer"
+            >
+              <span class="social-icon">◎</span>
+              <span>tunganhfamilysoccer</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="copyright">
+        <p>2026 Tùng Anh Family Soccer</p>
+      </div>
+    </footer>
+
+    <script src="/Frontend/JS/sale.js"></script>
+    <script src="/Frontend/JS/user-auth.js"></script>
+    <script src="/Frontend/JS/user-menu.js"></script>
+  </body>
+</html>

@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quản lý đơn hàng - NVBH</title>
+    <link rel="stylesheet" href="/Frontend/CSS/staff.css" />
+  </head>
+  <body>
+    <script>
+      const user = JSON.parse(localStorage.getItem("user"));
+
+      if (!user || user.role !== "staff") {
+        alert("Bạn không có quyền truy cập trang nhân viên bán hàng");
+        window.location.href = "/Frontend/user/login.html";
+      }
+
+      function logout() {
+        localStorage.removeItem("user");
+        window.location.href = "/Frontend/user/login.html";
+      }
+    </script>
+
+    <div class="staff-layout">
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <div class="logo-box">
+          <img src="/Frontend/img/logo.jpg" alt="TAF Soccer" />
+          <h2>TAF Soccer</h2>
+          <p>Nhân viên bán hàng</p>
+        </div>
+
+        <nav class="sidebar-menu">
+          <a href="/Frontend/staff/staff-dashboard.html">🏠 Tổng quan</a>
+          <a href="/Frontend/staff/staff-orders.html" class="active"
+            >📦 Quản lý đơn hàng</a
+          >
+          <a href="/Frontend/staff/staff-products.html">👟 Quản lý sản phẩm</a>
+          <a href="/Frontend/staff/staff-statistics.html">📊 Thống kê</a>
+          <a href="#" onclick="logout()">🚪 Đăng xuất</a>
+        </nav>
+      </aside>
+
+      <!-- MAIN -->
+      <main class="main-content">
+        <header class="topbar">
+          <div>
+            <h1>Quản lý đơn hàng</h1>
+            <p>Xem trạng thái và xử lý chi tiết đơn hàng của khách hàng</p>
+          </div>
+        </header>
+
+        <!-- THỐNG KÊ NHANH -->
+        <section class="cards">
+          <div class="card">
+            <h3>Tổng đơn hàng</h3>
+            <p id="totalOrders">0</p>
+          </div>
+
+          <div class="card">
+            <h3>Chờ xác nhận</h3>
+            <p id="pendingOrders">0</p>
+          </div>
+
+          <div class="card">
+            <h3>Đang giao</h3>
+            <p id="shippingOrders">0</p>
+          </div>
+
+          <div class="card">
+            <h3>Hoàn thành</h3>
+            <p id="completedOrders">0</p>
+          </div>
+        </section>
+
+        <!-- DANH SÁCH ĐƠN HÀNG -->
+        <section class="content-box">
+          <div class="box-header">
+            <h2>Danh sách đơn hàng</h2>
+
+            <div class="search-actions">
+              <input
+                type="text"
+                id="searchOrder"
+                class="search-input"
+                placeholder="Tìm theo tên, SĐT, mã đơn..."
+              />
+
+              <select id="statusFilter" class="search-input">
+                <option value="all">Tất cả trạng thái</option>
+                <option value="Chờ xác nhận">Chờ xác nhận</option>
+                <option value="Đã xác nhận">Đã xác nhận</option>
+                <option value="Đang giao">Đang giao</option>
+                <option value="Đã giao">Đã giao</option>
+                <option value="Hoàn thành">Hoàn thành</option>
+              </select>
+
+              <button class="btn btn-red" onclick="filterOrders()">
+                Tìm kiếm
+              </button>
+              <button class="btn btn-dark" onclick="loadOrders()">
+                Hiển thị tất cả
+              </button>
+            </div>
+          </div>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Mã đơn</th>
+                <th>Khách hàng</th>
+                <th>SĐT</th>
+                <th>Địa chỉ</th>
+                <th>Tổng tiền</th>
+                <th>Ngày đặt</th>
+                <th>Trạng thái</th>
+                <th>Thanh toán</th>
+                <th>Chi tiết</th>
+              </tr>
+            </thead>
+
+            <tbody id="orderList">
+              <!-- Đơn hàng sẽ được load bằng JS -->
+            </tbody>
+          </table>
+        </section>
+
+        <!-- CHI TIẾT ĐƠN HÀNG -->
+        <div class="order-detail-overlay" id="orderDetailBox">
+          <section class="content-box order-detail-box order-popup-form">
+            <button
+              type="button"
+              class="close-product-form-btn"
+              onclick="closeOrderDetail()"
+            >
+              &times;
+            </button>
+
+            <h2>Chi tiết đơn hàng</h2>
+
+            <form id="orderDetailForm">
+              <div id="orderDetailContent">
+                <!-- Chi tiết đơn hàng sẽ được load ở đây -->
+              </div>
+            </form>
+          </section>
+        </div>
+      </main>
+    </div>
+
+    <script src="/Frontend/JS/staff-orders.js"></script>
+  </body>
+</html>

@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin - Quản lý tài khoản</title>
+
+    <link rel="stylesheet" href="/Frontend/CSS/admin.css" />
+  </head>
+  <body>
+    <script src="/Frontend/JS/admin-auth.js"></script>
+
+    <div class="admin-layout">
+      <aside class="admin-sidebar">
+        <div class="admin-logo">
+          <img src="/Frontend/img/logo.jpg" alt="TAF Soccer" />
+          <h2>TAF Soccer</h2>
+          <p>Admin Panel</p>
+        </div>
+
+        <nav class="admin-menu">
+          <a href="/Frontend/admin/admin-users.html" class="active">
+            Quản lý tài khoản
+          </a>
+          <a href="/Frontend/admin/admin-brands.html">
+            Quản lý thương hiệu
+          </a>
+          <a href="/Frontend/user/login.html" id="adminLogoutBtn">
+            Đăng xuất
+          </a>
+        </nav>
+      </aside>
+
+      <main class="admin-main">
+        <header class="admin-header">
+          <div>
+            <h1>Quản lý tài khoản</h1>
+            <p>Thêm, sửa, xóa và phân quyền tài khoản trong hệ thống</p>
+          </div>
+
+          <div class="admin-info">
+            <span id="adminName">Admin</span>
+          </div>
+        </header>
+
+        <section class="admin-stats">
+          <div class="stat-card">
+            <h3>Tổng tài khoản</h3>
+            <p id="totalUsers">0</p>
+          </div>
+
+          <div class="stat-card">
+            <h3>Khách hàng</h3>
+            <p id="totalCustomers">0</p>
+          </div>
+
+          <div class="stat-card">
+            <h3>Nhân viên</h3>
+            <p id="totalStaff">0</p>
+          </div>
+
+          <div class="stat-card">
+            <h3>Admin</h3>
+            <p id="totalAdmins">0</p>
+          </div>
+        </section>
+
+        <section class="admin-content">
+          <div class="table-box">
+            <div class="table-header">
+              <h2>Danh sách tài khoản</h2>
+
+              <div class="table-actions">
+                <button class="add-user-btn" onclick="openAddUserForm()">
+                  + Thêm tài khoản
+                </button>
+
+                <div class="search-box">
+                  <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Tìm theo tên, email, số điện thoại..."
+                  />
+                  <button onclick="searchUsers()">Tìm kiếm</button>
+                  <button onclick="showAllUsers()" class="show-all-btn">
+                    Hiển thị tất cả
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="table-wrapper">
+              <table>
+                <thead>
+                  <tr>
+                    <th>STT</th>
+                    <th>Họ tên</th>
+                    <th>Email</th>
+                    <th>SĐT</th>
+                    <th>Quyền</th>
+                    <th>Thao tác</th>
+                  </tr>
+                </thead>
+
+                <tbody id="userTableBody">
+                  <!-- JS render dữ liệu -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <div class="admin-form-overlay" id="adminFormOverlay">
+      <div class="form-box admin-popup-form">
+        <button type="button" class="close-form-btn" onclick="closeUserForm()">
+          ×
+        </button>
+
+        <h2 id="formTitle">Thêm tài khoản</h2>
+
+        <form id="userForm">
+          <input type="hidden" id="userId" />
+
+          <div class="form-group">
+            <label>Họ tên</label>
+            <input type="text" id="name" placeholder="Nhập họ tên" />
+          </div>
+
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" id="email" placeholder="Nhập email" />
+          </div>
+
+          <div class="form-group">
+            <label>Số điện thoại</label>
+            <input type="text" id="phone" placeholder="Nhập số điện thoại" />
+          </div>
+
+          <div class="form-group">
+            <label>Mật khẩu</label>
+            <input
+              type="password"
+              id="password"
+              placeholder="Nhập mật khẩu mới hoặc để trống khi cập nhật"
+            />
+          </div>
+
+          <div class="form-group">
+            <label>Quyền tài khoản</label>
+            <select id="role">
+              <option value="user">Khách hàng</option>
+              <option value="staff">Nhân viên bán hàng</option>
+              <option value="admin">Admin</option>
+            </select>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" id="submitBtn">Thêm tài khoản</button>
+            <button type="button" class="reset-btn" onclick="resetForm()">
+              Làm mới
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script src="/Frontend/JS/admin-users.js"></script>
+  </body>
+</html>

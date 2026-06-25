@@ -1,0 +1,353 @@
+﻿<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hướng dẫn chọn size - Tùng Anh Family Soccer</title>
+    <link rel="stylesheet" href="/Frontend/CSS/homepage.css" />
+    <link rel="stylesheet" href="/Frontend/CSS/size.css" />
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="header">
+      <div class="top-header">
+        <a href="/Frontend/user/homepage.html" class="logo-box">
+          <img
+            src="/Frontend/img/logo.jpg"
+            alt="Logo Tùng Anh Family Soccer"
+            class="logo"
+          />
+          <div>
+            <h1>TAF Soccer</h1>
+          </div>
+        </a>
+
+        <div class="search-box">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Tìm kiếm giày bóng đá..."
+          />
+          <button
+            onclick="window.location.href = '/Frontend/user/all-products.html'"
+          >
+            Tìm kiếm
+          </button>
+        </div>
+
+        <div class="account-box">
+          <a href="/Frontend/user/cart.html" class="cart">🛒 Giỏ hàng</a>
+
+          <div class="user-menu">
+            <button class="user-icon">👤</button>
+
+            <div class="user-dropdown" id="userDropdown">
+              <!-- Nội dung sẽ được JS xử lý -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <nav class="navbar">
+        <ul>
+          <li class="dropdown">
+            <a href="/Frontend/user/homepage.html">Trang chủ</a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="/Frontend/user/homepage.html#gioithieu"
+                  >Giới thiệu website</a
+                >
+              </li>
+              <li>
+                <a href="/Frontend/user/homepage.html#sanpham"
+                  >Sản phẩm nổi bật</a
+                >
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="/Frontend/user/all-products.html">Tất cả sản phẩm</a>
+          </li>
+
+          <li class="dropdown">
+            <a href="#">Thương hiệu</a>
+            <ul class="dropdown-menu">
+              <li><a href="/Frontend/user/nike.html">Nike</a></li>
+              <li><a href="/Frontend/user/adidas.html">Adidas</a></li>
+              <li><a href="/Frontend/user/mizuno.html">Mizuno</a></li>
+              <li><a href="/Frontend/user/puma.html">Puma</a></li>
+            </ul>
+          </li>
+
+          <li class="dropdown">
+            <a href="#">Hướng dẫn</a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="/Frontend/user/size.html">Hướng dẫn chọn size</a>
+              </li>
+              <li>
+                <a href="/Frontend/user/thuonghieu.html"
+                  >Hướng dẫn chọn thương hiệu</a
+                >
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="/Frontend/user/sale.html">Khuyến mãi</a>
+          </li>
+          <li><a href="#lienhe">Liên hệ</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- BANNER -->
+    <section class="size-hero">
+      <img
+        src="https://images.unsplash.com/photo-1511886929837-354d827aae26?auto=format&fit=crop&w=1600&q=80"
+        alt="Banner hướng dẫn chọn size giày bóng đá"
+        class="size-hero-img"
+      />
+
+      <div class="size-hero-content">
+        <h2>Hướng dẫn chọn size</h2>
+        <p class="size-slogan">
+          Chọn đúng size - ôm chân thoải mái - tự tin làm chủ sân cỏ.
+        </p>
+      </div>
+    </section>
+
+    <!-- GIỚI THIỆU -->
+    <section class="size-intro-section">
+      <div class="size-intro-box">
+        <h2>Vì sao cần chọn đúng size giày?</h2>
+        <p>
+          Một đôi giày bóng đá đúng size sẽ giúp bạn di chuyển thoải mái, kiểm
+          soát bóng tốt hơn và hạn chế đau chân khi thi đấu. Nếu giày quá chật,
+          chân dễ bị đau và phồng rộp. Nếu giày quá rộng, bạn sẽ khó tăng tốc,
+          khó đổi hướng và dễ bị tuột gót.
+        </p>
+      </div>
+    </section>
+
+    <!-- CÁCH ĐO CHÂN -->
+    <section class="measure-section">
+      <h2>Cách đo chiều dài bàn chân</h2>
+
+      <div class="measure-list">
+        <div class="measure-card">
+          <span>Bước 1</span>
+          <h3>Đặt chân lên giấy</h3>
+          <p>
+            Đặt một tờ giấy sát tường, sau đó đặt bàn chân lên giấy. Gót chân
+            nên chạm nhẹ vào tường để đo chính xác hơn.
+          </p>
+        </div>
+
+        <div class="measure-card">
+          <span>Bước 2</span>
+          <h3>Đánh dấu đầu ngón chân</h3>
+          <p>
+            Dùng bút đánh dấu điểm dài nhất của bàn chân, thường là đầu ngón cái
+            hoặc ngón trỏ tùy dáng chân mỗi người.
+          </p>
+        </div>
+
+        <div class="measure-card">
+          <span>Bước 3</span>
+          <h3>Đo chiều dài</h3>
+          <p>
+            Dùng thước đo khoảng cách từ mép giấy sát tường đến điểm đã đánh
+            dấu. Sau đó đối chiếu với bảng size bên dưới.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- BẢNG SIZE -->
+    <section class="size-table-section">
+      <h2>Bạng size giày bóng đá</h2>
+      <p class="table-note">Bảng dưới đây chỉ sử dụng size từ 38 đến 45.</p>
+
+      <div class="size-table-wrap">
+        <table class="size-table">
+          <thead>
+            <tr>
+              <th>Size EU</th>
+              <th>Chiều dài bàn chân</th>
+              <th>Gợi ý sử dụng</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>38</td>
+              <td>23.5 - 24.0 cm</td>
+              <td>Phù hợp chân nhỏ, form gọn</td>
+            </tr>
+
+            <tr>
+              <td>39</td>
+              <td>24.0 - 24.5 cm</td>
+              <td>Phù hợp học sinh, sinh viên chân nhỏ</td>
+            </tr>
+
+            <tr>
+              <td>40</td>
+              <td>24.5 - 25.0 cm</td>
+              <td>Size phổ biến, dễ chọn</td>
+            </tr>
+
+            <tr>
+              <td>41</td>
+              <td>25.0 - 25.5 cm</td>
+              <td>Phù hợp người có bàn chân trung bình</td>
+            </tr>
+
+            <tr>
+              <td>42</td>
+              <td>25.5 - 26.0 cm</td>
+              <td>Phù hợp đa số nam giới chơi bóng</td>
+            </tr>
+
+            <tr>
+              <td>43</td>
+              <td>26.0 - 26.5 cm</td>
+              <td>Phù hợp chân hơi dài hoặc mu bàn chân cao</td>
+            </tr>
+
+            <tr>
+              <td>44</td>
+              <td>26.5 - 27.0 cm</td>
+              <td>Phù hợp chân dài, cần không gian thoải mái</td>
+            </tr>
+
+            <tr>
+              <td>45</td>
+              <td>27.0 - 27.5 cm</td>
+              <td>Phù hợp chân lớn, nên thử kỹ trước khi mua</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- LƯU Ý -->
+    <section class="size-tips-section">
+      <h2>Lưu ý khi chọn size</h2>
+
+      <div class="size-tips-list">
+        <div class="size-tip">
+          <h3>Không chọn quá chật</h3>
+          <p>
+            Giày quá chật có thể làm đau ngón chân, khó chạy và dễ bị phồng rộp.
+          </p>
+        </div>
+
+        <div class="size-tip">
+          <h3>Không chọn quá rộng</h3>
+          <p>
+            Giày quá rộng làm giảm cảm giác bóng, dễ tuột gót và khó xoay trở.
+          </p>
+        </div>
+
+        <div class="size-tip">
+          <h3>Nên đo vào buổi chiều</h3>
+          <p>
+            Buổi chiều bàn chân thường giãn ra một chút, giúp chọn size chính
+            xác hơn.
+          </p>
+        </div>
+
+        <div class="size-tip">
+          <h3>Chú ý form từng hãng</h3>
+          <p>
+            Nike, Adidas, Mizuno và Puma có form khác nhau, nên chọn theo dáng
+            chân của bạn.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- KẾT -->
+    <section class="size-ending">
+      <div class="size-ending-box">
+        <h2>Lời khuyên từ Tùng Anh Family Soccer</h2>
+        <p>
+          Nếu bạn đang phân vân giữa 2 size, hãy chọn size mang lại cảm giác ôm
+          chân nhưng không bị đau đầu ngón. Khi mua giày bóng đá, sự thoải mái
+          và chắc chân luôn quan trọng hơn việc chọn size theo thói quen.
+        </p>
+        <a href="/Frontend/user/homepage.html" class="btn-main">Xem sản phẩm</a>
+      </div>
+    </section>
+    <!-- FOOTER -->
+    <footer id="lienhe" class="footer">
+      <div class="footer-container">
+        <div class="footer-box">
+          <h3>Tùng Anh Family Soccer</h3>
+          <p>
+            Chuyên cung cấp giày bóng đá chính hãng Nike, Adidas, Mizuno,
+            Puma...
+          </p>
+          <p>Cam kết hàng chính hãng 100%, giá tốt và hỗ trợ tận tâm.</p>
+        </div>
+
+        <div class="footer-box">
+          <h3>ĐỊA CHỈ</h3>
+          <p>📍 Xã Quốc Oai, TP Hà Nội</p>
+          <p>📞 0972283405</p>
+          <p>✉️ TAFsoccer@gmail.com</p>
+          <p>🕒 08:00 - 22:00</p>
+        </div>
+
+        <div class="footer-box">
+          <h3>Hình thức thanh toán</h3>
+          <p>Thanh toán khi nhận hàng</p>
+          <p>Chuyển khoản ngân hàng</p>
+          <p>Thanh toán qua ví điện tử</p>
+        </div>
+
+        <div class="footer-box">
+          <h3>Fanpage</h3>
+          <div class="social-links">
+            <a
+              href="https://www.facebook.com/"
+              target="_blank"
+              rel="noopener"
+              class="social-link facebook"
+              aria-label="Facebook Tùng Anh Family Soccer"
+            >
+              <span class="social-icon">f</span>
+              <span>Tùng Anh Family Soccer</span>
+            </a>
+            <a
+              href="https://www.tiktok.com/"
+              target="_blank"
+              rel="noopener"
+              class="social-link tiktok"
+              aria-label="TikTok TungAnhSoccer"
+            >
+              <span class="social-icon">♪</span>
+              <span>TungAnhSoccer</span>
+            </a>
+            <a
+              href="https://www.instagram.com/"
+              target="_blank"
+              rel="noopener"
+              class="social-link instagram"
+              aria-label="Instagram tunganhfamilysoccer"
+            >
+              <span class="social-icon">◎</span>
+              <span>tunganhfamilysoccer</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="copyright"><p>2026 Tùng Anh Family Soccer</p></div>
+    </footer>
+    <script src="/Frontend/JS/user-auth.js"></script>
+    <script src="/Frontend/JS/user-menu.js"></script>
+  </body>
+</html>

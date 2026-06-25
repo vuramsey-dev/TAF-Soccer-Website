@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sản phẩm nổi bật - TAF Soccer</title>
+    <link rel="stylesheet" href="/Frontend/CSS/homepage.css" />
+    <link rel="stylesheet" href="/Frontend/CSS/category.css" />
+  </head>
+  <body class="all-products-page">
+    <header class="header">
+      <div class="top-header">
+        <a href="/Frontend/user/homepage.html" class="logo-box">
+          <img
+            src="/Frontend/img/logo.jpg"
+            alt="Logo TAF Soccer"
+            class="logo"
+          />
+          <div><h1>TAF Soccer</h1></div>
+        </a>
+
+        <div class="search-box">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Tìm kiếm sản phẩm nổi bật..."
+          />
+          <button
+            onclick="window.location.href = '/Frontend/user/all-products.html'"
+          >
+            Tìm tất cả
+          </button>
+        </div>
+
+        <div class="account-box">
+          <a href="/Frontend/user/cart.html" class="cart">🛒 Giỏ hàng</a>
+          <div class="user-menu">
+            <button class="user-icon">👤</button>
+            <div class="user-dropdown" id="userDropdown"></div>
+          </div>
+        </div>
+      </div>
+
+      <nav class="navbar">
+        <ul>
+          <li><a href="/Frontend/user/homepage.html">Trang chủ</a></li>
+          <li>
+            <a href="/Frontend/user/all-products.html">Tất cả sản phẩm</a>
+          </li>
+          <li class="dropdown">
+            <a href="#">Thương hiệu</a>
+            <ul class="dropdown-menu">
+              <li><a href="/Frontend/user/nike.html">Nike</a></li>
+              <li><a href="/Frontend/user/adidas.html">Adidas</a></li>
+              <li><a href="/Frontend/user/mizuno.html">Mizuno</a></li>
+              <li><a href="/Frontend/user/puma.html">Puma</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#">Hướng dẫn</a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="/Frontend/user/size.html">Hướng dẫn chọn size</a>
+              </li>
+              <li>
+                <a href="/Frontend/user/thuonghieu.html"
+                  >Hướng dẫn chọn thương hiệu</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li><a href="/Frontend/user/sale.html">Khuyến mãi</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section
+      class="all-products-hero"
+      style="background: linear-gradient(90deg, #111111, #b8860b)"
+    >
+      <div class="all-products-hero-content">
+        <span
+          style="
+            background: #fff;
+            color: #111;
+            border: none;
+            font-weight: bold;
+            padding: 5px 12px;
+            border-radius: 4px;
+          "
+        >
+          🌟 BEST SELLERS 🌟
+        </span>
+        <h1 style="font-size: 60px; color: #fff; margin-top: 15px">
+          TOP 10 NỔI BẬT
+        </h1>
+        <p
+          style="
+            color: #eee;
+            font-size: 18px;
+            max-width: 600px;
+            line-height: 1.6;
+          "
+        >
+          Khám phá danh sách 10 đôi giày được các cầu thủ săn đón nhiều nhất tại
+          TAF Soccer. Đặc biệt ưu đãi giảm ngay 10% như một lời tri ân dành cho
+          bạn!
+        </p>
+      </div>
+    </section>
+
+    <main class="catalog-page-shell">
+      <aside class="catalog-filter-panel" aria-label="Bộ lọc sản phẩm">
+        <div class="catalog-filter-heading">
+          <div>
+            <span>Bộ lọc</span>
+            <h2>Chọn nhanh</h2>
+          </div>
+          <button
+            type="button"
+            class="clear-catalog-filter"
+            onclick="resetAllProductFilters()"
+          >
+            Xóa lọc
+          </button>
+        </div>
+
+        <div class="catalog-filter-group">
+          <h3>Thương hiệu</h3>
+          <div class="catalog-check-grid">
+            <label
+              ><input
+                type="checkbox"
+                class="brand-checkbox"
+                value="Nike"
+              />Nike</label
+            >
+            <label
+              ><input
+                type="checkbox"
+                class="brand-checkbox"
+                value="Adidas"
+              />Adidas</label
+            >
+            <label
+              ><input
+                type="checkbox"
+                class="brand-checkbox"
+                value="Mizuno"
+              />Mizuno</label
+            >
+            <label
+              ><input
+                type="checkbox"
+                class="brand-checkbox"
+                value="Puma"
+              />Puma</label
+            >
+          </div>
+        </div>
+
+        <div class="catalog-filter-group">
+          <h3>Kích thước</h3>
+          <div class="catalog-check-grid catalog-size-grid">
+            <label
+              ><input
+                type="checkbox"
+                class="size-checkbox"
+                value="38"
+              />38</label
+            >
+            <label
+              ><input
+                type="checkbox"
+                class="size-checkbox"
+                value="39"
+              />39</label
+            >
+            <label
+              ><input
+                type="checkbox"
+                class="size-checkbox"
+                value="40"
+              />40</label
+            >
+            <label
+              ><input
+                type="checkbox"
+                class="size-checkbox"
+                value="41"
+              />41</label
+            >
+            <label
+              ><input
+                type="checkbox"
+                class="size-checkbox"
+                value="42"
+              />42</label
+            >
+            <label
+              ><input
+                type="checkbox"
+                class="size-checkbox"
+                value="43"
+              />43</label
+            >
+            <label
+              ><input
+                type="checkbox"
+                class="size-checkbox"
+                value="44"
+              />44</label
+            >
+            <label
+              ><input
+                type="checkbox"
+                class="size-checkbox"
+                value="45"
+              />45</label
+            >
+          </div>
+        </div>
+
+        <div class="catalog-filter-group">
+          <h3>Sắp xếp giá</h3>
+          <select id="sortProducts">
+            <option value="default">Mặc định (Theo BXH)</option>
+            <option value="price-desc">Giá cao đến thấp</option>
+            <option value="price-asc">Giá thấp đến cao</option>
+          </select>
+        </div>
+
+        <label class="catalog-stock-filter">
+          <input type="checkbox" id="availableOnly" />
+          <span>Chỉ hiện sản phẩm còn hàng</span>
+        </label>
+      </aside>
+
+      <section class="catalog-results-panel">
+        <div class="catalog-results-header">
+          <div>
+            <span
+              style="
+                color: #b8860b;
+                font-weight: bold;
+                text-transform: uppercase;
+              "
+              >Top Bán Chạy</span
+            >
+            <h2>Sản Phẩm Đang Hot</h2>
+            <p style="color: #666">
+              Bảng xếp hạng dựa trên tổng số lượng giày đã bán ra.
+            </p>
+          </div>
+
+          <div class="catalog-result-meta">
+            <strong id="featuredProductCount">0</strong>
+            <span>sản phẩm phù hợp</span>
+          </div>
+        </div>
+
+        <div class="product-container" id="featuredProductsGrid"></div>
+
+        <p
+          class="no-products"
+          id="noFeaturedProducts"
+          style="
+            display: none;
+            text-align: center;
+            padding: 40px;
+            font-weight: bold;
+            color: #666;
+          "
+        >
+          Không tìm thấy sản phẩm phù hợp với bộ lọc.
+        </p>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="copyright"><p>2026 Tùng Anh Family Soccer</p></div>
+    </footer>
+
+    <script src="/Frontend/JS/featured.js"></script>
+    <script src="/Frontend/JS/user-auth.js"></script>
+    <script src="/Frontend/JS/user-menu.js"></script>
+  </body>
+</html>

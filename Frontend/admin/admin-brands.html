@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin - Quản lý thương hiệu</title>
+
+    <link rel="stylesheet" href="/Frontend/CSS/admin.css" />
+  </head>
+  <body>
+    <script src="/Frontend/JS/admin-auth.js"></script>
+
+    <div class="admin-layout">
+      <aside class="admin-sidebar">
+        <div class="admin-logo">
+          <img src="/Frontend/img/logo.jpg" alt="TAF Soccer" />
+          <h2>TAF Soccer</h2>
+          <p>Admin Panel</p>
+        </div>
+
+        <nav class="admin-menu">
+          <a href="/Frontend/admin/admin-users.html">
+            Quản lý tài khoản
+          </a>
+          <a href="/Frontend/admin/admin-brands.html" class="active">
+            Quản lý thương hiệu
+          </a>
+          <a href="/Frontend/user/login.html" id="adminLogoutBtn">
+            Đăng xuất
+          </a>
+        </nav>
+      </aside>
+
+      <main class="admin-main">
+        <header class="admin-header">
+          <div>
+            <h1>Quản lý thương hiệu</h1>
+            <p>Thêm, sửa, xóa và tìm kiếm thương hiệu sản phẩm trong hệ thống</p>
+          </div>
+
+          <div class="admin-info">
+            <span id="adminName">Admin</span>
+          </div>
+        </header>
+
+        <section class="admin-stats">
+          <div class="stat-card">
+            <h3>Tổng thương hiệu</h3>
+            <p id="totalBrands">0</p>
+          </div>
+
+          <div class="stat-card">
+            <h3>Đang có sản phẩm</h3>
+            <p id="usedBrands">0</p>
+          </div>
+
+          <div class="stat-card">
+            <h3>Chưa có sản phẩm</h3>
+            <p id="emptyBrands">0</p>
+          </div>
+
+          <div class="stat-card">
+            <h3>Tổng sản phẩm</h3>
+            <p id="totalBrandProducts">0</p>
+          </div>
+        </section>
+
+        <section class="admin-content">
+          <div class="table-box">
+            <div class="table-header">
+              <h2>Danh sách thương hiệu</h2>
+
+              <div class="table-actions">
+                <button class="add-user-btn" onclick="openAddBrandForm()">
+                  + Thêm thương hiệu
+                </button>
+
+                <div class="search-box">
+                  <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Tìm theo tên thương hiệu..."
+                  />
+                  <button onclick="searchBrands()">Tìm kiếm</button>
+                  <button onclick="showAllBrands()" class="show-all-btn">
+                    Hiển thị tất cả
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="table-wrapper">
+              <table>
+                <thead>
+                  <tr>
+                    <th>STT</th>
+                    <th>Thương hiệu</th>
+                    <th>Mô tả</th>
+                    <th>Sản phẩm</th>
+                    <th>Ngày tạo</th>
+                    <th>Thao tác</th>
+                  </tr>
+                </thead>
+
+                <tbody id="brandTableBody">
+                  <!-- JS render dữ liệu -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <div class="admin-form-overlay" id="adminBrandFormOverlay">
+      <div class="form-box admin-popup-form">
+        <button type="button" class="close-form-btn" onclick="closeBrandForm()">
+          &times;
+        </button>
+
+        <h2 id="formTitle">Thêm thương hiệu</h2>
+
+        <form id="brandForm">
+          <input type="hidden" id="brandId" />
+
+          <div class="form-group">
+            <label>Tên thương hiệu</label>
+            <input
+              type="text"
+              id="brandName"
+              placeholder="Nhập tên thương hiệu"
+            />
+          </div>
+
+          <div class="form-group">
+            <label>Mô tả</label>
+            <textarea
+              id="brandDescription"
+              rows="4"
+              placeholder="Nhập mô tả ngắn cho thương hiệu"
+            ></textarea>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" id="submitBtn">Thêm thương hiệu</button>
+            <button type="button" class="reset-btn" onclick="resetBrandForm()">
+              Làm mới
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="/Frontend/JS/admin-brands.js"></script>
+  </body>
+</html>

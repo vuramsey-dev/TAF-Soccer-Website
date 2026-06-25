@@ -1,0 +1,244 @@
+﻿<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Đăng ký - Tùng Anh Family Soccer</title>
+    <link rel="stylesheet" href="/Frontend/CSS/homepage.css" />
+    <link rel="stylesheet" href="/Frontend/CSS/login-register.css" />
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="header">
+      <div class="top-header">
+        <a href="/Frontend/user/homepage.html" class="logo-box">
+          <img
+            src="/Frontend/img/logo.jpg"
+            alt="Logo Tùng Anh Family Soccer"
+            class="logo"
+          />
+          <div>
+            <h1>TAF Soccer</h1>
+          </div>
+        </a>
+
+        <div class="search-box">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Tìm kiếm giày bóng đá..."
+          />
+          <button
+            onclick="window.location.href = '/Frontend/user/all-products.html'"
+          >
+            Tìm kiếm
+          </button>
+        </div>
+
+        <div class="account-box" id="accountBox">
+          <a href="/Frontend/user/login.html" id="loginLink">Đăng nhập</a>
+          <a href="/Frontend/user/register.html" id="registerLink">Đăng ký</a>
+          <a href="#" id="logoutLink" style="display: none">Đăng xuất</a>
+          <a href="/Frontend/user/cart.html" class="cart">🛒 Giỏ hàng</a>
+        </div>
+      </div>
+
+      <nav class="navbar">
+        <ul>
+          <li class="dropdown">
+            <a href="/Frontend/user/homepage.html">Trang chủ</a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="/Frontend/user/homepage.html#gioithieu"
+                  >Giới thiệu website</a
+                >
+              </li>
+              <li>
+                <a href="/Frontend/user/homepage.html#sanpham"
+                  >Sản phẩm nổi bật</a
+                >
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="/Frontend/user/all-products.html">Tất cả sản phẩm</a>
+          </li>
+
+          <li class="dropdown">
+            <a href="#">Thương hiệu</a>
+            <ul class="dropdown-menu">
+              <li><a href="/Frontend/user/nike.html">Nike</a></li>
+              <li><a href="/Frontend/user/adidas.html">Adidas</a></li>
+              <li><a href="/Frontend/user/mizuno.html">Mizuno</a></li>
+              <li><a href="/Frontend/user/puma.html">Puma</a></li>
+            </ul>
+          </li>
+
+          <li class="dropdown">
+            <a href="#">Hướng dẫn</a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="/Frontend/user/size.html">Hướng dẫn chọn size</a>
+              </li>
+              <li>
+                <a href="/Frontend/user/thuonghieu.html"
+                  >Hướng dẫn chọn thương hiệu</a
+                >
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="/Frontend/user/sale.html">Khuyến mãi</a>
+          </li>
+          <li><a href="#lienhe">Liên hệ</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="auth-page">
+      <div class="auth-container">
+        <div class="auth-image">
+          <img
+            src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=80"
+            alt="Giày bóng đá"
+          />
+        </div>
+
+        <div class="auth-form-box">
+          <h2>Đăng ký</h2>
+          <p class="auth-desc">Tạo tài khoản để mua giày bóng đá dễ dàng hơn</p>
+
+          <form id="registerForm">
+            <div class="form-group">
+              <label for="registerName">Họ và tên</label>
+              <input
+                type="text"
+                id="registerName"
+                placeholder="Nhập họ và tên"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="registerPhone">Số điện thoại</label>
+              <input
+                type="tel"
+                id="registerPhone"
+                placeholder="Nhập số điện thoại"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="registerEmail">Email</label>
+              <input
+                type="email"
+                id="registerEmail"
+                placeholder="Nhập email"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="registerPassword">Mật khẩu</label>
+              <input
+                type="password"
+                id="registerPassword"
+                placeholder="Nhập mật khẩu"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="confirmPassword">Nhập lại mật khẩu</label>
+              <input
+                type="password"
+                id="confirmPassword"
+                placeholder="Nhập lại mật khẩu"
+                required
+              />
+            </div>
+
+            <button type="submit" class="auth-btn">Đăng ký</button>
+          </form>
+
+          <p class="change-page">
+            Bạn đã có tài khoản?
+            <a href="/Frontend/user/login.html">Đăng nhập</a>
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- FOOTER -->
+    <footer id="lienhe" class="footer">
+      <div class="footer-container">
+        <div class="footer-box">
+          <h3>Tùng Anh Family Soccer</h3>
+          <p>
+            Chuyên cung cấp giày bóng đá chính hãng Nike, Adidas, Mizuno,
+            Puma...
+          </p>
+          <p>Cam kết hàng chính hãng 100%, giá tốt và hỗ trợ tận tâm.</p>
+        </div>
+
+        <div class="footer-box">
+          <h3>ĐỊA CHỈ</h3>
+          <p>📍 Xã Quốc Oai, TP Hà Nội</p>
+          <p>📞 0972283405</p>
+          <p>✉️ TAFsoccer@gmail.com</p>
+          <p>🕒 08:00 - 22:00</p>
+        </div>
+
+        <div class="footer-box">
+          <h3>Hình thức thanh toán</h3>
+          <p>Thanh toán khi nhận hàng</p>
+          <p>Chuyển khoản ngân hàng</p>
+          <p>Thanh toán qua ví điện tử</p>
+        </div>
+
+        <div class="footer-box">
+          <h3>Fanpage</h3>
+          <div class="social-links">
+            <a
+              href="https://www.facebook.com/"
+              target="_blank"
+              rel="noopener"
+              class="social-link facebook"
+              aria-label="Facebook Tùng Anh Family Soccer"
+            >
+              <span class="social-icon">f</span>
+              <span>Tùng Anh Family Soccer</span>
+            </a>
+            <a
+              href="https://www.tiktok.com/"
+              target="_blank"
+              rel="noopener"
+              class="social-link tiktok"
+              aria-label="TikTok TungAnhSoccer"
+            >
+              <span class="social-icon">♪</span>
+              <span>TungAnhSoccer</span>
+            </a>
+            <a
+              href="https://www.instagram.com/"
+              target="_blank"
+              rel="noopener"
+              class="social-link instagram"
+              aria-label="Instagram tunganhfamilysoccer"
+            >
+              <span class="social-icon">◎</span>
+              <span>tunganhfamilysoccer</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="copyright"><p>2026 Tùng Anh Family Soccer</p></div>
+    </footer>
+
+    <script src="/Frontend/JS/login-register.js"></script>
+    <script src="/Frontend/JS/user-auth.js"></script>
+    <script src="/Frontend/JS/user-menu.js"></script>
+  </body>
+</html>

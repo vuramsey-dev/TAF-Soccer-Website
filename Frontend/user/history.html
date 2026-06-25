@@ -1,0 +1,352 @@
+﻿<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Giới thiệu shop - Tùng Anh Family Soccer</title>
+    <link rel="stylesheet" href="/Frontend/CSS/homepage.css" />
+    <link rel="stylesheet" href="/Frontend/CSS/history.css" />
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="header">
+      <div class="top-header">
+        <a href="/Frontend/user/homepage.html" class="logo-box">
+          <img
+            src="/Frontend/img/logo.jpg"
+            alt="Logo Tùng Anh Family Soccer"
+            class="logo"
+          />
+          <div>
+            <h1>TAF Soccer</h1>
+          </div>
+        </a>
+
+        <div class="search-box">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Tìm kiếm giày bóng đá..."
+          />
+          <button
+            onclick="window.location.href = '/Frontend/user/all-products.html'"
+          >
+            Tìm kiếm
+          </button>
+        </div>
+
+        <div class="account-box">
+          <a href="/Frontend/user/cart.html" class="cart">🛒 Giỏ hàng</a>
+
+          <div class="user-menu">
+            <button class="user-icon">👤</button>
+
+            <div class="user-dropdown" id="userDropdown">
+              <!-- Nội dung sẽ được JS xử lý -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <nav class="navbar">
+        <ul>
+          <li class="dropdown">
+            <a href="/Frontend/user/homepage.html">Trang chủ</a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="/Frontend/user/homepage.html#gioithieu"
+                  >Giới thiệu website</a
+                >
+              </li>
+              <li>
+                <a href="/Frontend/user/homepage.html#sanpham"
+                  >Sản phẩm nổi bật</a
+                >
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="/Frontend/user/all-products.html">Tất cả sản phẩm</a>
+          </li>
+
+          <li class="dropdown">
+            <a href="#">Thương hiệu</a>
+            <ul class="dropdown-menu">
+              <li><a href="/Frontend/user/nike.html">Nike</a></li>
+              <li><a href="/Frontend/user/adidas.html">Adidas</a></li>
+              <li><a href="/Frontend/user/mizuno.html">Mizuno</a></li>
+              <li><a href="/Frontend/user/puma.html">Puma</a></li>
+            </ul>
+          </li>
+
+          <li class="dropdown">
+            <a href="#">Hướng dẫn</a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="/Frontend/user/size.html">Hướng dẫn chọn size</a>
+              </li>
+              <li>
+                <a href="/Frontend/user/thuonghieu.html"
+                  >Hướng dẫn chọn thương hiệu</a
+                >
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="/Frontend/user/sale.html">Khuyến mãi</a>
+          </li>
+          <li><a href="#lienhe">Liên hệ</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- HERO GIỚI THIỆU -->
+    <section class="about-hero">
+      <img
+        src="/Frontend/img/k5.jpg"
+        alt="Banner giới thiệu Tùng Anh Family Soccer"
+        class="about-hero-img"
+      />
+
+      <div class="about-hero-content">
+        <h2>Câu chuyện của Tùng Anh Family Soccer</h2>
+        <p>
+          Từ niềm đam mê trái bóng tròn, chúng tôi xây dựng nên một shop giày
+          bóng đá dành cho những người thật sự yêu sân cỏ.
+        </p>
+      </div>
+    </section>
+    <!-- LỊCH SỬ PHÁT TRIỂN -->
+    <section class="about-section">
+      <div class="about-container">
+        <div class="about-text">
+          <h2>Lịch sử phát triển của shop</h2>
+
+          <p>
+            Tùng Anh Family Soccer được thành lập bởi những thành viên trong một
+            đội bóng phong trào. Ban đầu, chúng tôi chỉ là những người bạn
+            thường xuyên cùng nhau ra sân, cùng tập luyện, cùng thi đấu và cùng
+            chia sẻ niềm vui sau mỗi trận bóng.
+          </p>
+
+          <p>
+            Trong quá trình chơi bóng, các thành viên nhận ra rằng rất nhiều
+            người mới bắt đầu thường gặp khó khăn khi chọn giày. Có người chọn
+            sai size, có người chọn sai loại đế, có người mua mẫu giày không phù
+            hợp với vị trí thi đấu hoặc mặt sân.
+          </p>
+
+          <p>
+            Từ những trải nghiệm thực tế đó, Tùng Anh Family Soccer ra đời với
+            mong muốn không chỉ bán giày bóng đá, mà còn tư vấn cho những người
+            có cùng đam mê chọn được đôi giày phù hợp nhất.
+          </p>
+
+          <p>
+            Shop bắt đầu từ quy mô nhỏ, chủ yếu phục vụ bạn bè, anh em trong đội
+            bóng và các cầu thủ phong trào gần khu vực. Nhờ sự tin tưởng của
+            khách hàng, shop dần phát triển, mở rộng thêm nhiều mẫu giày từ các
+            thương hiệu nổi tiếng như Nike, Adidas, Mizuno và Puma.
+          </p>
+        </div>
+
+        <div class="about-image">
+          <img src="/Frontend/img/TRG08873.jpg" alt="Đội bóng thành lập shop" />
+        </div>
+      </div>
+    </section>
+
+    <!-- SỨ MỆNH -->
+    <section class="mission-section">
+      <h2>Sứ mệnh của shop</h2>
+
+      <div class="mission-list">
+        <div class="mission-card">
+          <h3>Tư vấn đúng nhu cầu</h3>
+          <p>
+            Chúng tôi luôn lắng nghe khách hàng để tư vấn mẫu giày phù hợp với
+            vị trí chơi, phong cách thi đấu và loại mặt sân.
+          </p>
+        </div>
+
+        <div class="mission-card">
+          <h3>Sản phẩm chất lượng</h3>
+          <p>
+            Shop hướng đến các mẫu giày bóng đá bền, đẹp, dễ sử dụng và phù hợp
+            với nhiều đối tượng khách hàng.
+          </p>
+        </div>
+
+        <div class="mission-card">
+          <h3>Lan tỏa đam mê</h3>
+          <p>
+            Tùng Anh Family Soccer mong muốn trở thành nơi kết nối những người
+            yêu bóng đá, cùng nhau chia sẻ kinh nghiệm và tình yêu với trái
+            bóng.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- THÔNG TIN CHI TIẾT SHOP -->
+    <section class="shop-info-section">
+      <div class="shop-info-container">
+        <h2>Thông tin chi tiết của shop</h2>
+
+        <div class="info-grid">
+          <div class="info-box">
+            <h3>Tên shop</h3>
+            <p>Tùng Anh Family Soccer</p>
+          </div>
+
+          <div class="info-box">
+            <h3>Lĩnh vực kinh doanh</h3>
+            <p>Giày bóng đá, phụ kiện bóng đá và tư vấn chọn giày phù hợp.</p>
+          </div>
+
+          <div class="info-box">
+            <h3>Đối tượng khách hàng</h3>
+            <p>Học sinh, sinh viên, cầu thủ phong trào và người yêu bóng đá.</p>
+          </div>
+
+          <div class="info-box">
+            <h3>Thương hiệu nổi bật</h3>
+            <p>Nike, Adidas, Mizuno, Puma.</p>
+          </div>
+
+          <div class="info-box">
+            <h3>Giá trị cốt lõi</h3>
+            <p>
+              Uy tín, nhiệt tình, chất lượng và đồng hành cùng đam mê sân cỏ.
+            </p>
+          </div>
+
+          <div class="info-box">
+            <h3>Thông điệp</h3>
+            <p>Chọn đúng đôi giày, chơi bóng tự tin hơn.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUÁ TRÌNH PHÁT TRIỂN -->
+    <section class="timeline-section">
+      <h2>Quá trình phát triển</h2>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <span>2022</span>
+          <div>
+            <h3>Hình thành ý tưởng</h3>
+            <p>
+              Các thành viên trong đội bóng bắt đầu chia sẻ kinh nghiệm chọn
+              giày cho bạn bè và anh em cùng chơi bóng.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <span>2023</span>
+          <div>
+            <h3>Ra mắt shop nhỏ</h3>
+            <p>
+              Tùng Anh Family Soccer bắt đầu bán những mẫu giày bóng đá đầu
+              tiên, tập trung vào chất lượng và tư vấn tận tình.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <span>2024</span>
+          <div>
+            <h3>Mở rộng sản phẩm</h3>
+            <p>
+              Shop bổ sung thêm nhiều mẫu giày từ các thương hiệu được yêu
+              thích, đáp ứng nhiều nhu cầu khác nhau.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <span>2025</span>
+          <div>
+            <h3>Phát triển cộng đồng</h3>
+            <p>
+              Shop không chỉ bán hàng mà còn chia sẻ kiến thức chọn giày, kinh
+              nghiệm thi đấu và chăm sóc giày bóng đá.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- FOOTER -->
+    <footer id="lienhe" class="footer">
+      <div class="footer-container">
+        <div class="footer-box">
+          <h3>Tùng Anh Family Soccer</h3>
+          <p>
+            Chuyên cung cấp giày bóng đá chính hãng Nike, Adidas, Mizuno,
+            Puma...
+          </p>
+          <p>Cam kết hàng chính hãng 100%, giá tốt và hỗ trợ tận tâm.</p>
+        </div>
+
+        <div class="footer-box">
+          <h3>ĐỊA CHỈ</h3>
+          <p>📍 Xã Quốc Oai, TP Hà Nội</p>
+          <p>📞 0972283405</p>
+          <p>✉️ TAFsoccer@gmail.com</p>
+          <p>🕒 08:00 - 22:00</p>
+        </div>
+
+        <div class="footer-box">
+          <h3>Hình thức thanh toán</h3>
+          <p>Thanh toán khi nhận hàng</p>
+          <p>Chuyển khoản ngân hàng</p>
+          <p>Thanh toán qua ví điện tử</p>
+        </div>
+
+        <div class="footer-box">
+          <h3>Fanpage</h3>
+          <div class="social-links">
+            <a
+              href="https://www.facebook.com/"
+              target="_blank"
+              rel="noopener"
+              class="social-link facebook"
+              aria-label="Facebook Tùng Anh Family Soccer"
+            >
+              <span class="social-icon">f</span>
+              <span>Tùng Anh Family Soccer</span>
+            </a>
+            <a
+              href="https://www.tiktok.com/"
+              target="_blank"
+              rel="noopener"
+              class="social-link tiktok"
+              aria-label="TikTok TungAnhSoccer"
+            >
+              <span class="social-icon">♪</span>
+              <span>TungAnhSoccer</span>
+            </a>
+            <a
+              href="https://www.instagram.com/"
+              target="_blank"
+              rel="noopener"
+              class="social-link instagram"
+              aria-label="Instagram tunganhfamilysoccer"
+            >
+              <span class="social-icon">◎</span>
+              <span>tunganhfamilysoccer</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="copyright"><p>2026 Tùng Anh Family Soccer</p></div>
+    </footer>
+    <script src="/Frontend/JS/user-auth.js"></script>
+    <script src="/Frontend/JS/user-menu.js"></script>
+  </body>
+</html>

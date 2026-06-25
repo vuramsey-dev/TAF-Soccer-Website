@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tài khoản của tôi - TAF Soccer</title>
+    <link rel="stylesheet" href="/Frontend/CSS/homepage.css" />
+    <link rel="stylesheet" href="/Frontend/CSS/account.css" />
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="header">
+      <div class="top-header">
+        <a href="/Frontend/user/homepage.html" class="logo-box">
+          <img
+            src="/Frontend/img/logo.jpg"
+            alt="Logo Tùng Anh Family Soccer"
+            class="logo"
+          />
+          <div>
+            <h1>TAF Soccer</h1>
+          </div>
+        </a>
+
+        <div class="search-box">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Tìm kiếm giày bóng đá..."
+          />
+          <button onclick="filterBrandProducts()">Tìm kiếm</button>
+        </div>
+
+        <div class="account-box">
+          <a href="/Frontend/user/cart.html" class="cart">🛒 Giỏ hàng</a>
+
+          <div class="user-menu">
+            <button class="user-icon">👤</button>
+
+            <div class="user-dropdown" id="userDropdown">
+              <!-- Nội dung sẽ được JS xử lý -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <nav class="navbar">
+        <ul>
+          <li class="dropdown">
+            <a href="/Frontend/user/homepage.html">Trang chủ</a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="/Frontend/user/homepage.html#gioithieu"
+                  >Giới thiệu website</a
+                >
+              </li>
+              <li>
+                <a href="/Frontend/user/homepage.html#sanpham"
+                  >Sản phẩm nổi bật</a
+                >
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="/Frontend/user/all-products.html">Tất cả sản phẩm</a>
+          </li>
+
+          <li class="dropdown">
+            <a href="#">Thương hiệu</a>
+            <ul class="dropdown-menu">
+              <li><a href="/Frontend/user/nike.html">Nike</a></li>
+              <li><a href="/Frontend/user/adidas.html">Adidas</a></li>
+              <li><a href="/Frontend/user/mizuno.html">Mizuno</a></li>
+              <li><a href="/Frontend/user/puma.html">Puma</a></li>
+            </ul>
+          </li>
+
+          <li class="dropdown">
+            <a href="#">Hướng dẫn</a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="/Frontend/user/size.html">Hướng dẫn chọn size</a>
+              </li>
+              <li>
+                <a href="/Frontend/user/thuonghieu.html"
+                  >Hướng dẫn chọn thương hiệu</a
+                >
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="/Frontend/user/sale.html">Khuyến mãi</a>
+          </li>
+          <li><a href="#lienhe">Liên hệ</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- ACCOUNT PAGE -->
+    <section class="account-page">
+      <div class="account-layout">
+        <!-- MENU TRÁI -->
+        <aside class="account-sidebar">
+          <h2>Tài khoản của tôi</h2>
+
+          <button class="account-tab active" data-tab="info">
+            👤 Thông tin tài khoản
+          </button>
+
+          <button class="account-tab" data-tab="password">
+            🔒 Thay đổi mật khẩu
+          </button>
+
+          <button class="account-tab" data-tab="orders">
+            📦 Theo dõi đơn hàng
+          </button>
+        </aside>
+
+        <!-- NỘI DUNG PHẢI -->
+        <main class="account-content">
+          <!-- BOX THÔNG TIN TÀI KHOẢN -->
+          <div class="account-box-content active" id="tab-info">
+            <h2>Thông tin tài khoản</h2>
+
+            <div class="account-info-row">
+              <span>Họ tên:</span>
+              <strong id="accountName"></strong>
+            </div>
+
+            <div class="account-info-row">
+              <span>Email:</span>
+              <strong id="accountEmail"></strong>
+            </div>
+
+            <div class="account-info-row">
+              <span>Số điện thoại:</span>
+              <strong id="accountPhone"></strong>
+            </div>
+
+            <div class="account-info-row">
+              <span>Vai trò:</span>
+              <strong id="accountRole"></strong>
+            </div>
+          </div>
+
+          <!-- BOX THAY ĐỔI MẬT KHẨU -->
+          <div class="account-box-content" id="tab-password">
+            <h2>Thay đổi mật khẩu</h2>
+            <p class="account-desc">
+              Cập nhật mật khẩu mới để bảo vệ tài khoản của bạn.
+            </p>
+
+            <form id="passwordForm">
+              <div class="form-group">
+                <label>Mật khẩu hiện tại</label>
+                <input
+                  type="password"
+                  id="currentPassword"
+                  placeholder="Nhập mật khẩu hiện tại"
+                />
+              </div>
+
+              <div class="form-group">
+                <label>Mật khẩu mới</label>
+                <input
+                  type="password"
+                  id="newPassword"
+                  placeholder="Nhập mật khẩu mới"
+                />
+              </div>
+
+              <div class="form-group">
+                <label>Xác nhận mật khẩu mới</label>
+                <input
+                  type="password"
+                  id="confirmPassword"
+                  placeholder="Nhập lại mật khẩu mới"
+                />
+              </div>
+
+              <button type="submit" class="account-btn">
+                Cập nhật mật khẩu
+              </button>
+            </form>
+          </div>
+
+          <!-- BOX THEO DÕI ĐƠN HÀNG -->
+          <div class="account-box-content" id="tab-orders">
+            <h2>Theo dõi đơn hàng</h2>
+
+            <div class="orders-filter">
+              <input
+                type="text"
+                id="searchOrder"
+                placeholder="Tìm theo mã đơn, sản phẩm..."
+              />
+
+              <select id="statusFilter">
+                <option value="all">Tất cả trạng thái</option>
+                <option value="Chờ xác nhận">Chờ xác nhận</option>
+                <option value="Đã xác nhận">Đã xác nhận</option>
+                <option value="Đang giao">Đang giao</option>
+                <option value="Đã giao">Đã giao</option>
+                <option value="Hoàn thành">Hoàn thành</option>
+              </select>
+
+              <button onclick="filterOrders()" type="button">Tìm kiếm</button>
+              <button onclick="loadMyOrders()" type="button" class="dark-btn">
+                Hiển thị tất cả
+              </button>
+            </div>
+
+            <div id="myOrdersList" class="orders-list">
+              <!-- Đơn hàng sẽ được load bằng JS -->
+            </div>
+          </div>
+        </main>
+      </div>
+    </section>
+
+    <script src="/Frontend/JS/account.js"></script>
+    <script src="/Frontend/JS/user-menu.js"></script>
+  </body>
+</html>

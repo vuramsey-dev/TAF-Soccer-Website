@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thống kê - NVBH</title>
+    <link rel="stylesheet" href="/Frontend/CSS/staff.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <script>
+      // Kiểm tra quyền và xử lý đăng xuất
+      const user = JSON.parse(localStorage.getItem("user"));
+
+      if (!user || user.role !== "staff") {
+        alert("Bạn không có quyền truy cập trang nhân viên bán hàng");
+        window.location.href = "/Frontend/user/login.html";
+      }
+
+      function logout() {
+        localStorage.removeItem("user");
+        window.location.href = "/Frontend/user/login.html";
+      }
+    </script>
+    <div class="staff-layout">
+      <aside class="sidebar">
+        <div class="logo-box">
+          <img src="/Frontend/img/logo.jpg" alt="TAF Soccer" />
+          <h2>TAF Soccer</h2>
+          <p>Nhân viên bán hàng</p>
+        </div>
+        <nav class="sidebar-menu">
+          <a href="/Frontend/staff/staff-dashboard.html">🏠 Tổng quan</a>
+          <a href="/Frontend/staff/staff-orders.html">📦 Quản lý đơn hàng</a>
+          <a href="/Frontend/staff/staff-products.html">👟 Quản lý sản phẩm</a>
+          <a href="/Frontend/staff/staff-statistics.html" class="active"
+            >📊 Thống kê</a
+          >
+          <a href="#" onclick="logout()">🚪 Đăng xuất</a>
+        </nav>
+      </aside>
+
+      <main class="main-content">
+        <header class="topbar">
+          <div>
+            <h1>Thống kê & Báo cáo</h1>
+            <p>Dữ liệu được cập nhật theo thời gian thực từ hệ thống</p>
+          </div>
+        </header>
+
+        <div class="statistics-summary">
+          <div class="summary-card total">
+            <span>TỔNG DOANH THU</span>
+            <h3 id="totalRevenueCard">0đ</h3>
+          </div>
+          <div class="summary-card revenue">
+            <span>DOANH THU HÔM NAY</span>
+            <h3 id="todayRevenueCard">0đ</h3>
+          </div>
+          <div class="summary-card orders">
+            <span>ĐƠN HÀNG HOÀN THÀNH</span>
+            <h3 id="totalOrdersCard">0</h3>
+          </div>
+          <div class="summary-card products">
+            <span>SẢN PHẨM ĐÃ BÁN</span>
+            <h3 id="totalProductsCard">0</h3>
+          </div>
+          <div class="summary-card inventory">
+            <span>TỔNG GIÁ TRỊ TỒN KHO</span>
+            <h3 id="inventoryValueCard">0đ</h3>
+          </div>
+          <div class="summary-card largest">
+            <span>ĐƠN HÀNG LỚN NHẤT</span>
+            <h3 id="largestOrderCard">0đ</h3>
+          </div>
+          <div class="summary-card smallest">
+            <span>ĐƠN HÀNG NHỎ NHẤT</span>
+            <h3 id="smallestOrderCard">0đ</h3>
+          </div>
+          <div class="summary-card average">
+            <span>GIÁ TRỊ ĐƠN TRUNG BÌNH</span>
+            <h3 id="averageOrderCard">0đ</h3>
+          </div>
+          <div class="summary-card year">
+            <span>DOANH THU NĂM NAY</span>
+            <h3 id="yearRevenueCard">0đ</h3>
+          </div>
+        </div>
+
+        <div class="report-filter">
+          <div class="filter-group">
+            <label>Chọn loại thống kê:</label>
+            <select id="statisticsType">
+              <option value="7days">Doanh thu 7 ngày qua</option>
+              <option value="30days">Doanh thu 30 ngày qua</option>
+              <option value="today">Doanh thu hôm nay (24h)</option>
+              <option value="1year">Doanh thu 1 năm qua</option>
+              <option value="best">Top sản phẩm bán chạy</option>
+              <option value="worst">Top sản phẩm bán chậm</option>
+            </select>
+          </div>
+          <button id="exportBtn" class="export-btn">⬇ Xuất Excel</button>
+        </div>
+
+        <div class="report-grid">
+          <div class="table-box" style="height: 100%">
+            <h2 id="statisticsTitle">Đang tải dữ liệu...</h2>
+            <div style="position: relative; height: 350px; width: 100%">
+              <canvas id="statisticsCanvas"></canvas>
+            </div>
+          </div>
+
+          <div class="table-box">
+            <h2>Bảng chi tiết dữ liệu</h2>
+            <div
+              class="table-wrapper"
+              style="max-height: 350px; overflow-y: auto"
+            >
+              <table>
+                <thead id="statisticsHead"></thead>
+                <tbody id="statisticsBody"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="/Frontend/JS/staff-statistics.js"></script>
+  </body>
+</html>

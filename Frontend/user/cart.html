@@ -1,0 +1,339 @@
+﻿<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Giỏ hàng - Tùng Anh Family Soccer</title>
+    <link rel="stylesheet" href="/Frontend/CSS/cart.css" />
+    <link rel="stylesheet" href="/Frontend/CSS/homepage.css" />
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="header">
+      <div class="top-header">
+        <a href="/Frontend/user/homepage.html" class="logo-box">
+          <img
+            src="/Frontend/img/logo.jpg"
+            alt="Logo Tùng Anh Family Soccer"
+            class="logo"
+          />
+          <div>
+            <h1>TAF Soccer</h1>
+          </div>
+        </a>
+
+        <div class="search-box">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Tìm kiếm giày bóng đá..."
+          />
+          <button
+            onclick="window.location.href = '/Frontend/user/all-products.html'"
+          >
+            Tìm kiếm
+          </button>
+        </div>
+
+        <div class="account-box">
+          <a href="/Frontend/user/cart.html" class="cart">🛒 Giỏ hàng</a>
+
+          <div class="user-menu">
+            <button class="user-icon">👤</button>
+
+            <div class="user-dropdown" id="userDropdown">
+              <!-- Nội dung sẽ được JS xử lý -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <nav class="navbar">
+        <ul>
+          <li class="dropdown">
+            <a href="/Frontend/user/homepage.html">Trang chủ</a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="/Frontend/user/homepage.html#gioithieu"
+                  >Giới thiệu website</a
+                >
+              </li>
+              <li>
+                <a href="/Frontend/user/homepage.html#sanpham"
+                  >Sản phẩm nổi bật</a
+                >
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="/Frontend/user/all-products.html">Tất cả sản phẩm</a>
+          </li>
+
+          <li class="dropdown">
+            <a href="#">Thương hiệu</a>
+            <ul class="dropdown-menu">
+              <li><a href="/Frontend/user/nike.html">Nike</a></li>
+              <li><a href="/Frontend/user/adidas.html">Adidas</a></li>
+              <li><a href="/Frontend/user/mizuno.html">Mizuno</a></li>
+              <li><a href="/Frontend/user/puma.html">Puma</a></li>
+            </ul>
+          </li>
+
+          <li class="dropdown">
+            <a href="#">Hướng dẫn</a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="/Frontend/user/size.html">Hướng dẫn chọn size</a>
+              </li>
+              <li>
+                <a href="/Frontend/user/thuonghieu.html"
+                  >Hướng dẫn chọn thương hiệu</a
+                >
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="/Frontend/user/sale.html">Khuyến mãi</a>
+          </li>
+          <li><a href="#lienhe">Liên hệ</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- GIỎ HÀNG -->
+    <section class="cart-page">
+      <h2>Sản phẩm trong giỏ hàng</h2>
+
+      <div class="cart-container">
+        <div class="cart-list" id="cartList">
+          <!-- Sản phẩm trong giỏ hàng sẽ được load từ MongoDB -->
+        </div>
+
+        <!-- TÓM TẮT ĐƠN HÀNG -->
+        <div class="cart-summary">
+          <h3>Tóm tắt đơn hàng</h3>
+          <div class="summary-row">
+            <span>Sản phẩm đã chọn</span>
+            <strong id="selectedCount">0</strong>
+          </div>
+          <div class="summary-row">
+            <span>Tạm tính</span>
+            <strong id="subTotal">0đ</strong>
+          </div>
+
+          <div class="summary-row">
+            <span>Phí vận chuyển</span>
+            <strong id="shippingFee">30.000đ</strong>
+          </div>
+
+          <div class="summary-row discount">
+            <span>Giảm giá</span>
+            <strong id="discount">0đ</strong>
+          </div>
+
+          <div class="summary-line"></div>
+
+          <div class="summary-row total">
+            <span>Tổng thanh toán</span>
+            <strong id="grandTotal">0đ</strong>
+          </div>
+
+          <button class="checkout-btn" onclick="checkoutCart()">
+            Đặt hàng
+          </button>
+
+          <button
+            class="clear-cart-btn"
+            id="cartActionBtn"
+            onclick="handleCartAction()"
+          >
+            Làm trống giỏ hàng
+          </button>
+
+          <a href="/Frontend/user/all-products.html" class="continue-btn">
+            Tiếp tục mua hàng
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- FORM ĐẶT HÀNG - MẶC ĐỊNH ẨN -->
+    <section
+      class="checkout-form-section"
+      id="checkoutFormSection"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="checkoutFormTitle"
+    >
+      <div class="checkout-form-box">
+        <button
+          type="button"
+          class="checkout-close-btn"
+          onclick="hideCheckoutForm()"
+          aria-label="Đóng form đặt hàng"
+        >
+          ×
+        </button>
+        <h2 id="checkoutFormTitle">Thông tin nhận hàng</h2>
+        <p>
+          Vui lòng nhập thông tin mới hoặc chọn nhanh thông tin đã dùng trước
+          đó.
+        </p>
+
+        <div class="saved-receiver-box" id="savedReceiverBox">
+          <h3>Thông tin đã dùng trước đó</h3>
+
+          <div class="saved-receiver-list" id="savedReceiverList">
+            <!-- JS sẽ tự hiển thị danh sách thông tin cũ ở đây -->
+          </div>
+        </div>
+        <form id="checkoutForm">
+          <div class="form-group">
+            <label for="receiverName">Họ và tên người nhận</label>
+            <input
+              type="text"
+              id="receiverName"
+              placeholder="Nhập họ tên người nhận"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="receiverPhone">Số điện thoại</label>
+            <input
+              type="text"
+              id="receiverPhone"
+              placeholder="Nhập số điện thoại"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="receiverProvince">Tỉnh / Thành phố</label>
+            <select id="receiverProvince" required>
+              <option value="">-- Chọn tỉnh / thành phố --</option>
+              <option value="Hà Nội">Hà Nội</option>
+              <option value="TP Hồ Chí Minh">TP Hồ Chí Minh</option>
+              <option value="Đà Nẵng">Đà Nẵng</option>
+              <option value="Hải Phòng">Hải Phòng</option>
+              <option value="Cần Thơ">Cần Thơ</option>
+              <option value="Thái Nguyên">Thái Nguyên</option>
+              <option value="Bắc Ninh">Bắc Ninh</option>
+              <option value="Hưng Yên">Hưng Yên</option>
+              <option value="Nam Định">Nam Định</option>
+              <option value="Thanh Hóa">Thanh Hóa</option>
+              <option value="Nghệ An">Nghệ An</option>
+              <option value="Quảng Ninh">Quảng Ninh</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="receiverWard">Xã / Phường</label>
+            <select id="receiverWard" required>
+              <option value="">-- Chọn xã / phường --</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="receiverDetailAddress">Địa chỉ cụ thể</label>
+            <input
+              type="text"
+              id="receiverDetailAddress"
+              placeholder="Ví dụ: Số nhà, thôn, đường..."
+              required
+            />
+          </div>
+
+          <label class="save-info-check">
+            <input type="checkbox" id="saveReceiverInfo" checked />
+            Lưu thông tin nhận hàng cho lần sau
+          </label>
+
+          <div class="checkout-actions">
+            <button type="submit" class="checkout-btn">
+              Xác nhận đặt hàng
+            </button>
+
+            <button
+              type="button"
+              class="clear-cart-btn"
+              onclick="hideCheckoutForm()"
+            >
+              Hủy
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+    <!-- FOOTER -->
+    <footer id="lienhe" class="footer">
+      <div class="footer-container">
+        <div class="footer-box">
+          <h3>Tùng Anh Family Soccer</h3>
+          <p>
+            Chuyên cung cấp giày bóng đá chính hãng Nike, Adidas, Mizuno,
+            Puma...
+          </p>
+          <p>Cam kết hàng chính hãng 100%, giá tốt và hỗ trợ tận tâm.</p>
+        </div>
+
+        <div class="footer-box">
+          <h3>ĐỊA CHỈ</h3>
+          <p>📍 Xã Quốc Oai, TP Hà Nội</p>
+          <p>📞 0972283405</p>
+          <p>✉️ TAFsoccer@gmail.com</p>
+          <p>🕒 08:00 - 22:00</p>
+        </div>
+
+        <div class="footer-box">
+          <h3>Hình thức thanh toán</h3>
+          <p>Thanh toán khi nhận hàng</p>
+          <p>Chuyển khoản ngân hàng</p>
+          <p>Thanh toán qua ví điện tử</p>
+        </div>
+
+        <div class="footer-box">
+          <h3>Fanpage</h3>
+          <div class="social-links">
+            <a
+              href="https://www.facebook.com/"
+              target="_blank"
+              rel="noopener"
+              class="social-link facebook"
+              aria-label="Facebook Tùng Anh Family Soccer"
+            >
+              <span class="social-icon">f</span>
+              <span>Tùng Anh Family Soccer</span>
+            </a>
+            <a
+              href="https://www.tiktok.com/"
+              target="_blank"
+              rel="noopener"
+              class="social-link tiktok"
+              aria-label="TikTok TungAnhSoccer"
+            >
+              <span class="social-icon">♪</span>
+              <span>TungAnhSoccer</span>
+            </a>
+            <a
+              href="https://www.instagram.com/"
+              target="_blank"
+              rel="noopener"
+              class="social-link instagram"
+              aria-label="Instagram tunganhfamilysoccer"
+            >
+              <span class="social-icon">◎</span>
+              <span>tunganhfamilysoccer</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="copyright"><p>2026 Tùng Anh Family Soccer</p></div>
+    </footer>
+
+    <script src="/Frontend/JS/user-auth.js"></script>
+    <script src="/Frontend/JS/user-menu.js"></script>
+    <script src="/Frontend/JS/cart.js"></script>
+  </body>
+</html>

@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quản lý sản phẩm - NVBH</title>
+    <link rel="stylesheet" href="/Frontend/CSS/staff.css" />
+  </head>
+  <body>
+    <script>
+      const user = JSON.parse(localStorage.getItem("user"));
+
+      if (!user || user.role !== "staff") {
+        alert("Bạn không có quyền truy cập trang quản lý sản phẩm");
+        window.location.href = "/Frontend/user/login.html";
+      }
+
+      function logout() {
+        localStorage.removeItem("user");
+        window.location.href = "/Frontend/user/login.html";
+      }
+    </script>
+
+    <div class="staff-layout">
+      <aside class="sidebar">
+        <div class="logo-box">
+          <img src="/Frontend/img/logo.jpg" alt="TAF Soccer" />
+          <h2>TAF Soccer</h2>
+          <p>Nhân viên bán hàng</p>
+        </div>
+
+        <nav class="sidebar-menu">
+          <a href="/Frontend/staff/staff-dashboard.html">🏠 Tổng quan</a>
+          <a href="/Frontend/staff/staff-orders.html">📦 Quản lý đơn hàng</a>
+          <a href="/Frontend/staff/staff-products.html" class="active"
+            >👟 Quản lý sản phẩm</a
+          >
+          <a href="/Frontend/staff/staff-statistics.html">📊 Thống kê</a>
+          <a href="#" onclick="logout()">🚪 Đăng xuất</a>
+        </nav>
+      </aside>
+
+      <main class="main-content">
+        <header class="topbar">
+          <div>
+            <h1>Quản lý sản phẩm</h1>
+            <p>Thêm, sửa, xóa và tìm kiếm sản phẩm giày bóng đá</p>
+          </div>
+        </header>
+
+        <div class="product-form-overlay" id="productFormOverlay">
+          <section class="content-box product-popup-form">
+            <button
+              type="button"
+              class="close-product-form-btn"
+              onclick="closeProductForm()"
+            >
+              &times;
+            </button>
+            <h2 id="formTitle">Thêm sản phẩm mới</h2>
+
+            <form id="productForm" class="product-form">
+              <input type="hidden" id="productId" />
+
+              <input
+                type="text"
+                id="productName"
+                placeholder="Tên sản phẩm"
+                required
+              />
+
+              <select id="productBrand" required>
+                <option value="">-- Chọn thương hiệu --</option>
+                <option value="Nike">Nike</option>
+                <option value="Adidas">Adidas</option>
+                <option value="Mizuno">Mizuno</option>
+                <option value="Puma">Puma</option>
+              </select>
+
+              <input
+                type="number"
+                id="productPrice"
+                placeholder="Giá sản phẩm"
+                required
+              />
+
+              <div class="size-area">
+                <label>Nhập số lượng theo từng size:</label>
+
+                <div class="size-stock-list">
+                  <div class="size-stock-item">
+                    <span>Size 38</span>
+                    <input
+                      type="number"
+                      class="size-quantity"
+                      data-size="38"
+                      min="0"
+                      value="0"
+                    />
+                  </div>
+
+                  <div class="size-stock-item">
+                    <span>Size 39</span>
+                    <input
+                      type="number"
+                      class="size-quantity"
+                      data-size="39"
+                      min="0"
+                      value="0"
+                    />
+                  </div>
+
+                  <div class="size-stock-item">
+                    <span>Size 40</span>
+                    <input
+                      type="number"
+                      class="size-quantity"
+                      data-size="40"
+                      min="0"
+                      value="0"
+                    />
+                  </div>
+
+                  <div class="size-stock-item">
+                    <span>Size 41</span>
+                    <input
+                      type="number"
+                      class="size-quantity"
+                      data-size="41"
+                      min="0"
+                      value="0"
+                    />
+                  </div>
+
+                  <div class="size-stock-item">
+                    <span>Size 42</span>
+                    <input
+                      type="number"
+                      class="size-quantity"
+                      data-size="42"
+                      min="0"
+                      value="0"
+                    />
+                  </div>
+
+                  <div class="size-stock-item">
+                    <span>Size 43</span>
+                    <input
+                      type="number"
+                      class="size-quantity"
+                      data-size="43"
+                      min="0"
+                      value="0"
+                    />
+                  </div>
+
+                  <div class="size-stock-item">
+                    <span>Size 44</span>
+                    <input
+                      type="number"
+                      class="size-quantity"
+                      data-size="44"
+                      min="0"
+                      value="0"
+                    />
+                  </div>
+
+                  <div class="size-stock-item">
+                    <span>Size 45</span>
+                    <input
+                      type="number"
+                      class="size-quantity"
+                      data-size="45"
+                      min="0"
+                      value="0"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="image-area">
+                <label>Ảnh sản phẩm:</label>
+                <input type="file" id="productImage" accept="image/*" />
+                <img id="imagePreview" src="" alt="Ảnh xem trước" />
+              </div>
+
+              <textarea
+                id="productDescription"
+                placeholder="Mô tả sản phẩm"
+              ></textarea>
+
+              <div class="form-actions">
+                <button type="submit" id="addBtn" class="btn-submit">
+                  Thêm sản phẩm
+                </button>
+                <button
+                  type="button"
+                  id="updateBtn"
+                  class="btn-submit update-btn"
+                >
+                  Cập nhật
+                </button>
+                <button type="button" id="resetBtn" class="btn btn-dark">
+                  Làm mới
+                </button>
+              </div>
+            </form>
+          </section>
+        </div>
+
+        <section class="content-box">
+          <div class="box-header">
+            <h2>Danh sách sản phẩm</h2>
+
+            <div class="search-actions">
+              <button
+                class="btn btn-red add-product-btn"
+                onclick="openAddProductForm()"
+              >
+                + Thêm sản phẩm
+              </button>
+              <input
+                type="text"
+                id="searchProduct"
+                placeholder="Tìm kiếm sản phẩm..."
+                class="search-input"
+              />
+              <button class="btn btn-red" onclick="searchProducts()">
+                Tìm kiếm
+              </button>
+              <button class="btn btn-dark" onclick="loadProducts()">
+                Hiển thị tất cả
+              </button>
+            </div>
+          </div>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Ảnh</th>
+                <th>Tên sản phẩm</th>
+                <th>Thương hiệu</th>
+                <th>Giá</th>
+                <th>Tổng số lượng</th>
+                <th>Thao tác</th>
+              </tr>
+            </thead>
+            <tbody id="productList"></tbody>
+          </table>
+        </section>
+      </main>
+    </div>
+
+    <script src="/Frontend/JS/staff-products.js"></script>
+  </body>
+</html>

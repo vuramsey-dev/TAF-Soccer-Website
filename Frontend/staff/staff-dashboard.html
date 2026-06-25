@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NVBH - TAF Soccer</title>
+    <link rel="stylesheet" href="/Frontend/CSS/staff.css" />
+  </head>
+  <body>
+    <div class="staff-layout">
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <div class="logo-box">
+          <img src="/Frontend/img/logo.jpg" alt="TAF Soccer" />
+          <h2>TAF Soccer</h2>
+          <p>Nhân viên bán hàng</p>
+        </div>
+
+        <nav class="sidebar-menu">
+          <a href="/Frontend/staff/staff-dashboard.html" class="active"
+            >🏠 Tổng quan</a
+          >
+          <a href="/Frontend/staff/staff-orders.html">📦 Quản lý đơn hàng</a>
+          <a href="/Frontend/staff/staff-products.html">👟 Quản lý sản phẩm</a>
+          <a href="/Frontend/staff/staff-statistics.html">📊 Thống kê</a>
+          <a href="/Frontend/user/login.html" onclick="logout()"
+            >🚪 Đăng xuất</a
+          >
+        </nav>
+      </aside>
+
+      <!-- MAIN -->
+      <main class="main-content">
+        <header class="topbar">
+          <div>
+            <h1>Tổng quan bán hàng</h1>
+            <p>Theo dõi nhanh tình hình đơn hàng theo dữ liệu hiện tại</p>
+          </div>
+          <div class="user-info">
+            <span id="staffName">NVBH</span>
+          </div>
+        </header>
+
+        <section class="cards">
+          <div class="card">
+            <h3>Tổng đơn hàng</h3>
+            <p id="dashboardTotalOrders">0</p>
+          </div>
+
+          <div class="card">
+            <h3>Chờ xác nhận</h3>
+            <p id="dashboardPendingOrders">0</p>
+          </div>
+
+          <div class="card">
+            <h3>Cần thanh toán</h3>
+            <p id="dashboardPaymentOrders">0</p>
+          </div>
+
+          <div class="card">
+            <h3>Doanh thu hôm nay</h3>
+            <p id="dashboardTodayRevenue">0đ</p>
+          </div>
+        </section>
+
+        <section class="content-box">
+          <div class="box-header">
+            <h2>Đơn hàng mới nhất</h2>
+            <a class="btn btn-red" href="/Frontend/staff/staff-orders.html">
+              Quản lý đơn hàng
+            </a>
+          </div>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Mã đơn</th>
+                <th>Khách hàng</th>
+                <th>SĐT</th>
+                <th>Tổng tiền</th>
+                <th>Trạng thái</th>
+                <th>Thanh toán</th>
+                <th>Ngày đặt</th>
+              </tr>
+            </thead>
+
+            <tbody id="latestOrderList">
+              <tr>
+                <td colspan="7" style="text-align:center;">Đang tải dữ liệu...</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      const user = JSON.parse(localStorage.getItem("user"));
+
+      if (!user || user.role !== "staff") {
+        alert("Bạn không có quyền truy cập trang nhân viên bán hàng");
+        window.location.href = "/Frontend/user/login.html";
+      }
+
+      function logout() {
+        localStorage.removeItem("user");
+      }
+
+      if (user && user.name) {
+        document.getElementById("staffName").innerText = user.name;
+      }
+    </script>
+    <script src="/Frontend/JS/staff-dashboard.js"></script>
+  </body>
+</html>
