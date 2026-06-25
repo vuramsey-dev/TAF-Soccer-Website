@@ -1,5 +1,5 @@
 (function () {
-  const CART_API_URL = "http://localhost:3000/api/cart";
+  const CART_API_URL = "https://taf-soccer-website-1.onrender.com/api/cart";
 
   function getUser() {
     return JSON.parse(localStorage.getItem("user"));

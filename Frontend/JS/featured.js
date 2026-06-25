@@ -1,5 +1,6 @@
-const API_PRODUCT = "http://localhost:3000/api/products";
-const API_BEST_SELLERS = "http://localhost:3000/api/statistics/best-products"; // API cho hàng bán chạy
+const API_PRODUCT = "https://taf-soccer-website-1.onrender.com/api/products";
+const API_BEST_SELLERS =
+  "https://taf-soccer-website-1.onrender.com/api/statistics/best-products"; // API cho hàng bán chạy
 
 const featuredProductsGrid = document.getElementById("featuredProductsGrid");
 const noFeaturedProducts = document.getElementById("noFeaturedProducts");

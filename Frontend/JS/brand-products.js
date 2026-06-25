@@ -1,5 +1,5 @@
-const API_PRODUCT = "/api/products";
-const API_CART = "/api/cart";
+const API_PRODUCT = "https://taf-soccer-website-1.onrender.com/api/products";
+const API_CART = "https://taf-soccer-website-1.onrender.com/api/cart";
 
 const brandProductsGrid = document.getElementById("brandProductsGrid");
 const noProducts = document.getElementById("noProducts");

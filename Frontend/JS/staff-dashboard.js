@@ -1,8 +1,13 @@
-const DASHBOARD_ORDER_API = "http://localhost:3000/api/orders";
+const DASHBOARD_ORDER_API =
+  "https://taf-soccer-website-1.onrender.com/api/orders";
 
 const dashboardTotalOrders = document.getElementById("dashboardTotalOrders");
-const dashboardPendingOrders = document.getElementById("dashboardPendingOrders");
-const dashboardPaymentOrders = document.getElementById("dashboardPaymentOrders");
+const dashboardPendingOrders = document.getElementById(
+  "dashboardPendingOrders",
+);
+const dashboardPaymentOrders = document.getElementById(
+  "dashboardPaymentOrders",
+);
 const dashboardTodayRevenue = document.getElementById("dashboardTodayRevenue");
 const latestOrderList = document.getElementById("latestOrderList");
 
@@ -99,7 +104,9 @@ function renderLatestOrders(orders) {
 }
 
 function isOrderPaid(order) {
-  return order.paymentStatus === "Đã thanh toán" || order.status === "Hoàn thành";
+  return (
+    order.paymentStatus === "Đã thanh toán" || order.status === "Hoàn thành"
+  );
 }
 
 function getPaymentStatusHTML(order) {

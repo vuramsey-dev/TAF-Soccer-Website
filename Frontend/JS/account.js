@@ -1,5 +1,5 @@
-const API_ORDER = "http://localhost:3000/api/orders";
-const API_AUTH = "http://localhost:3000/api/auth";
+const API_ORDER = "https://taf-soccer-website-1.onrender.com/api/orders";
+const API_AUTH = "https://taf-soccer-website-1.onrender.com/api/auth";
 
 const user = JSON.parse(localStorage.getItem("user"));
 

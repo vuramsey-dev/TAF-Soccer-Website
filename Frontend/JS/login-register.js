@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:3000/api/auth";
+const API_URL = "https://taf-soccer-website-1.onrender.com/api/auth";
 
 // Xử lý đăng ký
 const registerForm = document.getElementById("registerForm");

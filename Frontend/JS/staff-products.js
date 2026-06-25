@@ -1,5 +1,5 @@
-const API_PRODUCT = "http://localhost:3000/api/products";
-const API_BRAND = "http://localhost:3000/api/admin/brands";
+const API_PRODUCT = "https://taf-soccer-website-1.onrender.com/api/products";
+const API_BRAND = "https://taf-soccer-website-1.onrender.com/api/admin/brands";
 
 const productForm = document.getElementById("productForm");
 const productList = document.getElementById("productList");
@@ -238,9 +238,10 @@ function renderProducts(products) {
   products.forEach((product) => {
     const tr = document.createElement("tr");
 
-    const totalQuantity = product.sizeStock && product.sizeStock.length > 0
-      ? getTotalQuantity(product.sizeStock)
-      : product.quantity || 0;
+    const totalQuantity =
+      product.sizeStock && product.sizeStock.length > 0
+        ? getTotalQuantity(product.sizeStock)
+        : product.quantity || 0;
 
     tr.innerHTML = `
       <td>

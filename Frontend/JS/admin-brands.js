@@ -1,4 +1,5 @@
-const API_ADMIN_BRANDS = "http://localhost:3000/api/admin/brands";
+const API_ADMIN_BRANDS =
+  "https://taf-soccer-website-1.onrender.com/api/admin/brands";
 
 const adminBrandFormOverlay = document.getElementById("adminBrandFormOverlay");
 const brandForm = document.getElementById("brandForm");
@@ -165,13 +166,16 @@ if (brandForm) {
     };
 
     try {
-      const res = await fetch(id ? `${API_ADMIN_BRANDS}/${id}` : API_ADMIN_BRANDS, {
-        method: id ? "PUT" : "POST",
-        headers: {
-          "Content-Type": "application/json",
+      const res = await fetch(
+        id ? `${API_ADMIN_BRANDS}/${id}` : API_ADMIN_BRANDS,
+        {
+          method: id ? "PUT" : "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(brandData),
         },
-        body: JSON.stringify(brandData),
-      });
+      );
       const data = await res.json();
 
       alert(data.message);
@@ -246,8 +250,7 @@ function searchBrands() {
   const filteredBrands = brands.filter((brand) => {
     return (
       (brand.name && brand.name.toLowerCase().includes(keyword)) ||
-      (brand.description &&
-        brand.description.toLowerCase().includes(keyword))
+      (brand.description && brand.description.toLowerCase().includes(keyword))
     );
   });
 

@@ -1,4 +1,4 @@
-const API_ORDER = "http://localhost:3000/api/orders";
+const API_ORDER = "https://taf-soccer-website-1.onrender.com/api/orders";
 
 const orderList = document.getElementById("orderList");
 const searchOrder = document.getElementById("searchOrder");
@@ -139,7 +139,9 @@ function getNextStatus(order) {
 }
 
 function isOrderPaid(order) {
-  return order.paymentStatus === "Đã thanh toán" || order.status === "Hoàn thành";
+  return (
+    order.paymentStatus === "Đã thanh toán" || order.status === "Hoàn thành"
+  );
 }
 
 function getPaymentActionHTML(order) {

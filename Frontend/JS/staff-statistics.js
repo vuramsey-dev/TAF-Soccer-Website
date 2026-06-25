@@ -1,4 +1,5 @@
-const API_STATISTICS = "/api/statistics"; // Dùng đường dẫn tương đối để không bị lỗi khi deploy
+const API_STATISTICS =
+  "https://taf-soccer-website-1.onrender.com/api/statistics"; // Dùng đường dẫn tương đối để không bị lỗi khi deploy
 
 const statisticsType = document.getElementById("statisticsType");
 const statisticsTitle = document.getElementById("statisticsTitle");

@@ -1,4 +1,4 @@
-const API_ADMIN = "http://localhost:3000/api/admin/users";
+const API_ADMIN = "https://taf-soccer-website-1.onrender.com/api/admin/users";
 
 const adminFormOverlay = document.getElementById("adminFormOverlay");
 const userForm = document.getElementById("userForm");
