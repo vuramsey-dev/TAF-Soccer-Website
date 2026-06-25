@@ -1,9 +1,12 @@
-const API_CART = "http://localhost:3000/api/cart";
-const API_ORDER = "http://localhost:3000/api/orders";
-const API_ADDRESS = "http://localhost:3000/api/addresses";
-const API_PRODUCT_ALL = "http://localhost:3000/api/products";
-const API_WORST_SELLERS = "http://localhost:3000/api/statistics/worst-products";
-const API_BEST_SELLERS = "http://localhost:3000/api/statistics/best-products"; // Thêm dòng này
+const API_CART = "https://taf-soccer-website-1.onrender.com/api/cart";
+const API_ORDER = "https://taf-soccer-website-1.onrender.com/api/orders";
+const API_ADDRESS = "https://taf-soccer-website-1.onrender.com/api/addresses";
+const API_PRODUCT_ALL =
+  "https://taf-soccer-website-1.onrender.com/api/products";
+const API_WORST_SELLERS =
+  "https://taf-soccer-website-1.onrender.com/api/statistics/worst-products";
+const API_BEST_SELLERS =
+  "https://taf-soccer-website-1.onrender.com/api/statistics/best-products"; // Thêm dòng này
 
 const cartList = document.getElementById("cartList");
 const subTotalElement = document.getElementById("subTotal");

@@ -1,5 +1,6 @@
-const API_PRODUCT = "http://localhost:3000/api/products";
-const API_WORST_SELLERS = "http://localhost:3000/api/statistics/worst-products";
+const API_PRODUCT = "https://taf-soccer-website-1.onrender.com/api/products";
+const API_WORST_SELLERS =
+  "https://taf-soccer-website-1.onrender.com/api/statistics/worst-products";
 
 const saleProductsGrid = document.getElementById("saleProductsGrid");
 const noSaleProducts = document.getElementById("noSaleProducts");

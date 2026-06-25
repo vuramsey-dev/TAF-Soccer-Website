@@ -1,7 +1,9 @@
-const API_PRODUCT = "/api/products";
-const API_CART = "/api/cart";
-const API_WORST_SELLERS = "/api/statistics/worst-products";
-const API_BEST_SELLERS = "/api/statistics/best-products"; // Thêm API hàng bán chạy
+const API_PRODUCT = "https://taf-soccer-website-1.onrender.com/api/products";
+const API_CART = "https://taf-soccer-website-1.onrender.com/api/cart";
+const API_WORST_SELLERS =
+  "https://taf-soccer-website-1.onrender.com/api/statistics/worst-products";
+const API_BEST_SELLERS =
+  "https://taf-soccer-website-1.onrender.com/api/statistics/best-products"; // Thêm API hàng bán chạy
 
 const productDetail = document.getElementById("productDetail");
 const productDescriptionSection = document.getElementById(
